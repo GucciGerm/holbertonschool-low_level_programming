@@ -2,9 +2,11 @@
 #include <time.h>
 #include <stdio.h>
 
-/** main - function replaces the n with a random number
-*
-*/
+/**
+ * main - function replaces the n with a random number
+ *
+ * Return: 0
+ */
 
 int main(void)
 {
