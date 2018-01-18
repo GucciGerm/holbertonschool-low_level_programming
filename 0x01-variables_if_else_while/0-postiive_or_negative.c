@@ -2,10 +2,10 @@
 #include <time.h>
 #include <stdio.h>
 
-/** main - function will replace n with random number
- *
- * Return: 0
- */
+/** main - function replaces the n with a random number
+*
+*/
+
 int main(void)
 {
 	int n;
@@ -13,14 +13,10 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	if (n > 0)
-	{
-		printf("%d is positive", n);
-	}
+		printf("%d,n is positive\n", n);
 	else if (n < 0)
-		printf("%d is negative", n);
+		printf("%d,n is negative\n", n);
 	else
-	{
-		printf("%d is zero", n);
-	}
+		printf("%d,n is zero\n", n);
 	return (0);
 }
