@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * _print_sign - Function will print the sign of a number
+ * print_sign - Function will print the sign of a number
  * @n: n is our current int
  *
  * Return: 1,0,-1
