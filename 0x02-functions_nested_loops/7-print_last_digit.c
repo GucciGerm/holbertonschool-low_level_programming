@@ -2,6 +2,7 @@
 
 /**
  * print_last_digit - This function prints the last digit of a number
+ * @x: Random character
  *
  * Return: x
  */
