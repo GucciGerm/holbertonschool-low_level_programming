@@ -1,0 +1,1 @@
+Today at holberton we are learning more about functions, and nested loops
