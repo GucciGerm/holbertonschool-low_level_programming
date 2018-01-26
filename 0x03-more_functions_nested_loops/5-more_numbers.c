@@ -3,24 +3,6 @@
 /**
  * more_numbers - Function prints 10 times the numbers from 0-14
  *
- *
- */
-
-void more_numbers(void)
-{
-	int a;
-
-	for(a = '0'; a <= 14; a++)
-       	{
-       	_putchar('a' * 10);
-	}
-	_putchar('\n');
-
-#include "holberton.h"
-
-/**
- * more_numbers - Function prints 10 times the numbers from 0-14
- *
  * more_numbers: void
  */
 
