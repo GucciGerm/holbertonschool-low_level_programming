@@ -1,0 +1,1 @@
+Today at holberton we are learning about pointers, arrays and strings #CisFun
