@@ -2,7 +2,7 @@
 
 /**
  * _puts - Function prints a string followed by new line to stdout
- * @s: The following string
+ * @str: The following string
  *
  */
 
