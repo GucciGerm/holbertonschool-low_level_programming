@@ -1,4 +1,5 @@
 #include "holberton.h"
+int _putchar(char c)
 
 /**
  * _puts - Function prints a string followed by new line to stdout
