@@ -2,11 +2,11 @@
 
 /**
  * _puts - Function prints a string followed by new line to stdout
- *
+ * @s: The following string
  *
  */
 
-void _puts(char *str);
+void _puts(char *str)
 {
 	int a;
 
