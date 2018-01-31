@@ -3,7 +3,7 @@
 
 /**
  * rev_string - Function verses a string
- * s: *s is the string we're pointing at
+ * @s: *s is the string we're pointing at
  *
  */
 
