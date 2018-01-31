@@ -2,7 +2,7 @@
 
 /**
  * puts_half - Function prints 2nd half of a string followed by new line
- * @str - This is the string we are cutting in half
+ * @str: This is the string we are cutting in half
  *
  */
 
