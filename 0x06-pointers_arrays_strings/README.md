@@ -1,0 +1,1 @@
+Today at holberton we are learning even more about pointers, arrays and strings!
