@@ -1,0 +1,1 @@
+Here at holberton today we are learning how to use argc and argv
