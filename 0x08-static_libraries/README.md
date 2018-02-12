@@ -1,0 +1,1 @@
+Here today at holberton we learned how to create static libraries and how to use 
