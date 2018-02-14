@@ -1,0 +1,1 @@
+Here today at Holberton we will be learning about malloc and free
