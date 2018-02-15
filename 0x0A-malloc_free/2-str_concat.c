@@ -17,6 +17,11 @@ char *str_concat(char *s1, char *s2)
 	char *s3;
 	int sum;
 
+	if (s1 == 0)
+		return (" ");
+	if (s2 == 0)
+		return (" ");
+
 	for (j = 0; s1[j] != '\0'; j++)
 		;
 	for (d = 0; s2[d] != '\0'; d++)
@@ -24,8 +29,8 @@ char *str_concat(char *s1, char *s2)
 
 	sum = j + d + 1;
 	s3 = malloc(sizeof(char) * sum);
-	if (s3 == NULL)
-		return (NULL);
+	if (s3 == 0)
+		return (0);
 
 	for (j = 0; s1[j] != '\0'; j++)
 		s3[j] = s1[j];
