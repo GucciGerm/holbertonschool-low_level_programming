@@ -18,9 +18,9 @@ char *str_concat(char *s1, char *s2)
 	int sum;
 
 	if (s1 == 0)
-		return (" ");
+		s1 = ("");
 	if (s2 == 0)
-		return (" ");
+		s2 = ("");
 
 	for (j = 0; s1[j] != '\0'; j++)
 		;
