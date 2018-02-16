@@ -13,42 +13,36 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int j, i, d;
-	char *s3;
+	unsigned int j, d, g, b;
+	char *germ;
 
 	if (s1 == 0)
+		s1 = "";
+	if (s2 == 0)
+		s2 = "";
+
+	for (j = 0; s1[j] != '\0'; j++)
+		;
+	for (d = 0; s2[d] != '\0'; d++)
+		;
+	if (n >= d)
 	{
-		s3 = malloc(n + 1);
-		if (s3 == 0)
+		germ = malloc(j + d + 1);
+		if (germ == 0)
 			return (0);
-		if (s2 == 0)
-		{
-			return (s3);
-		}
-		else
-		{
-			for (j = 0; n + 1; j++)
-				s3[j] = s2[j];
-			s3[j] = '\0';
-		return (s3);
-		}
 	}
-	for (j = 0; s1[j]; j++)
-		;
-	s3 = malloc(j + n + 1);
-	if (s3 == 0)
-		return (0);
-	for (i = 0; s2[i]; i++)
-		;
-	for (j = 0; s1[j]; j++)
-		s3[j] = s1[j];
-	s3[j] = ' ';
-	if (i > n)
-		i = n;
-	for (d = 0; d < i; d++, j++)
+	if (n < d)
 	{
-		s3[j] = s2[d];
+		germ = malloc(j + n + 1);
+		if (germ == 0)
+			return (0);
 	}
-	s3[j] = '\0';
-	return (s3);
+	for (g = 0; g < j; g++)
+		germ[g] = s1[g];
+
+	for (b = 0; b < d && b < n; b++)
+		germ[g + b] = s2[b];
+
+	germ[g + b] = '\0';
+	return (germ);
 }
