@@ -1,0 +1,1 @@
+Here today at holberton we will be learning about Function pointers!
