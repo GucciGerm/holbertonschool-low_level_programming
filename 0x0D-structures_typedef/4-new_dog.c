@@ -3,6 +3,35 @@
 #include "dog.h"
 
 /**
+ * *_strdup - Here our function will return a pointer
+ * @str: is the string have as the input and we want to find the size
+ *
+ * Return: Germ
+ */
+
+char *_strdup(char *str)
+{
+	int j;
+	int d;
+	char *Germ;
+
+	if (str == 0)
+		return (0);
+
+	for (j = 0; str[j] != '\0'; j++)
+		;
+	Germ = malloc(sizeof(char) * (j + 1));
+
+	if (Germ == 0)
+		return (0);
+
+	for (d = 0; d <= j; d++)
+		Germ[d] = str[d];
+
+	return (Germ);
+}
+
+/**
  * *new_dog - Here our function with create a new dog structure
  * @name: This will be the name of our dog
  * @age: This will be the age of the dog
@@ -13,42 +42,28 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int j, str_len, owner_len;
-	dog_t *Shoku;
+	char *HelloName; /*we are declaring 2 ptrs to become place holders*/
+	char *HelloOwner; /*using those place holders we will duplicate them*/
+	dog_t *waffle; /*waffle is the new dog we are creating*/
 
-	Shoku = malloc(sizeof(dog_t));
-	if (Shoku == NULL)
+	HelloName = _strdup(name); /*create a dupl from name to HiName*/
+	HelloOwner = _strdup(owner); /*create a dupl from owner to HiOwner*/
+	if (HelloName == NULL) /*Our edgecases*/
 		return (NULL);
-
-	if (name != NULL)
+	if (HelloOwner == NULL) /*Our edgecases*/
 	{
-		for (j = 0; name[j] != '\0'; j++)
-		{
-			str_len++;
-		}
-		Shoku->name = malloc(sizeof(char) * (str_len + 1));
-		if (Shoku->name == NULL)
-		{
-			free(Shoku->name);
-			return (NULL);
-		}
-		for (j = 0; j < str_len; j++)
-			Shoku->name[j] = name[j];
-		if (Shoku->owner != NULL)
-		{
-			for (j = 0; owner[j] != '\0'; j++)
-			{
-				owner_len++;
-			}
-			Shoku->owner = malloc(sizeof(char) * (owner_len + 1));
-			if (Shoku->owner == NULL)
-			{
-				free(Shoku->name);
-				free(Shoku);
-				return (NULL);
-			}
-		}
-		Shoku->age = age;
+		free(HelloName);
+		return (NULL);
 	}
-	return (Shoku);
+	waffle = malloc(sizeof(dog_t));
+	if (waffle == NULL)
+	{
+		free(HelloName);
+		free(HelloOwner);
+		return (NULL);
+	}
+	waffle->name = HelloName;
+	waffle->owner = HelloOwner;
+	waffle->age = age;
+	return (waffle);
 }
