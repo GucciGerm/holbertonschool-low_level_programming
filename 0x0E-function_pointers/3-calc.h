@@ -1,5 +1,7 @@
 #ifndef BabyGoku
 #define BabyGoku
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
  * struct op - Struct op
