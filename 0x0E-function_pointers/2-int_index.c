@@ -28,5 +28,5 @@ int int_index(int *array, int size, int (*cmp)(int))
 		if (bb != 0)
 			return (jd);
 	}
-	return (jd);
+	return (-1);
 }
