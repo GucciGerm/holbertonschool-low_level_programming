@@ -18,7 +18,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	va_start(listo, n); /*we are starting up our list*/
 	if (separator == NULL)
-		separator = "";
+		printf("%s", separator);
 
 	for (jg = 0; jg < n; jg++)
 	{
@@ -27,7 +27,8 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		{
 			printf("(nil)\n");
 		}
-		printf("%s", db);
+		else
+			printf("%s", db);
 		if (jg < n - 1)
 			printf("%s", separator);
 	}
