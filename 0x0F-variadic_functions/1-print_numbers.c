@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
-#include "variadic_functions.h"
 
 /**
  * print_numbers - Here our function will print prints and a new line
@@ -18,7 +17,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	va_start(numnew, n);
 	if (separator == NULL) /* if separator is null dont print*/
-		return;
+		separator = "";
 
 	for (shoku = 0; shoku < n; shoku++) /*forloop to count the #ofargpass */
 	{
