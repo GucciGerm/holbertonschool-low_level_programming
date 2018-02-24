@@ -18,7 +18,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	va_start(listo, n); /*we are starting up our list*/
 	if (separator == NULL)
-		return;
+		separator = "";
 
 	for (jg = 0; jg < n; jg++)
 	{
