@@ -30,7 +30,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	new->len = _strlen(str);
 	new->next = NULL;
 	if (*head == NULL) /*You want to make it equal to your new node*/
-		last = *head;
+		*head = new;
 	else
 	{
 		last = *head;
@@ -38,8 +38,8 @@ list_t *add_node_end(list_t **head, const char *str)
 		{
 			last = last->next;
 		}
+		last->next = new;
 	}
-	last->next = new;
 	return (new);
 }
 /**
@@ -49,7 +49,7 @@ list_t *add_node_end(list_t **head, const char *str)
  * Return: The length of string
  */
 
-int _strlen(char *s)
+int _strlen(const char *s)
 {
 	int a;
 	int b = 0;
