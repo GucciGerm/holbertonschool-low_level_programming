@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
- * print_list - Here our function will print all the elements of our list_t list
+ * print_list - Here our function will print all the elements of our list
  * @h: H will be representing our linked list variable
  *
  * Return: We will be returning our number of nodes
