@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "list.h"
+#include "lists.h"
 #include "string.h"
 
 /**
@@ -12,7 +12,8 @@
 void free_list(list_t *head)
 {
 	list_t *placeholder = head;
-	while(head != NULL)
+
+	while (head != NULL)
 	{
 		placeholder = head->next;
 		free(head->str);
