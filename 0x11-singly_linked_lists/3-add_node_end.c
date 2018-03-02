@@ -4,7 +4,7 @@
 #include "string.h"
 
 /**
- * *add_node_end - Here our function will add a node to the end of list_t
+ * add_node_end - Here our function will add a node to the end of list_t
  * @head: Add to the end of our list
  * @str: Duplicate of our string
  *
@@ -27,7 +27,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		free(new);
 		return (NULL);
 	}
-	new->len = strlen(str);
+	new->len = _strlen(str);
 	new->next = NULL;
 	if (*head == NULL) /*You want to make it equal to your new node*/
 		*head = new;
@@ -42,4 +42,22 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 	last->next = new;
 	return (new);
+}
+/**
+ * _strlen - This function returns the length of a string
+ * @s: Would be our string
+ *
+ * Return: The length of string
+ */
+
+int _strlen(char *s)
+{
+	int a;
+	int b = 0;
+
+	for (a = 0; s[b] != '\0'; ++a)
+	{
+		b++;
+	}
+	return (b);
 }
