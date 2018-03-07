@@ -11,11 +11,10 @@
 
 void free_listint2(listint_t **head)
 {
-	listint_t *placeholder;
-	if (*head == NULL)
-	{
-		head = NULL;
-	}
+	listint_t *placeholder; /*remember space for declaration*/
+
+	if (head == NULL) /*we want to set the head to null*/
+		return;
 
 	while (*head != NULL) /*for better practice use while loop for lists*/
 	{
