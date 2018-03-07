@@ -12,6 +12,10 @@
 void free_listint2(listint_t **head)
 {
 	listint_t *placeholder;
+	if (*head == NULL)
+	{
+		head = NULL;
+	}
 
 	while (*head != NULL) /*for better practice use while loop for lists*/
 	{
@@ -19,5 +23,4 @@ void free_listint2(listint_t **head)
 		*head = (*head)->next;
 		free(placeholder);
 	}
-	head = NULL;
 }
