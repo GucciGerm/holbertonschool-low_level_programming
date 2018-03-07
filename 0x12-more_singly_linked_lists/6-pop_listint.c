@@ -11,16 +11,17 @@
 
 int pop_listint(listint_t **head)
 {
-	int value = 1;
+	int value; /*we have to return an integer*/
 	listint_t *next = NULL;
+
 
 	if (*head == NULL)
 	{
-		return (-1);
+		return (0);
 	}
-	next = (*head)->next;
-	value = (*head)->n;
-	free(*head);
+	next = (*head)->next; /*put the next ptr in next*/
+	value = (*head)->n; /*get value from headlist from n*/
+	free(*head); /*free that list*/
 	*head = next;
 	return (value);
 
