@@ -19,6 +19,6 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	{
 		if (((n ^ m) >> i) & 1) /*shifting the xor of n^m */
 			count++; /*count how many bits are true and equal to 1*/
-         }
+	}
 	return (count);
 }
