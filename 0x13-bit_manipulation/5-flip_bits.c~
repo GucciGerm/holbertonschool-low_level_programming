@@ -1,0 +1,22 @@
+#include <stdlib.h>
+#include "holberton.h"
+#include <stdio.h>
+
+/**
+ *
+ *
+ *
+ */
+
+unsigned int flip_bits(unsigned long int n, unsigned long int m)
+{
+	unsigned int count = 0;
+	unsigned int i;
+
+	for (i = 64; i > 1; i--)
+	{
+		if (((n ^ m) >> i) & 1) /*shifting the xor of n^m */
+			count++; /*count how many bits are true and equal to 1*/
+         }
+	return (count);
+}
