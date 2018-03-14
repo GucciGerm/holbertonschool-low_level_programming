@@ -38,7 +38,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	length = read(fd, buffer, letters); /*use buffer 2 count letters*/
 	buffer[letters] = '\0';
-
+	close(fd);
 
 	/* for writing */
 
@@ -47,11 +47,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fd == -1)
 	{
 		free(buffer);
-		close(fd);
 		return (-1);
 	}
 
 	free(buffer);
-	close(fd);
 	return (length);
 }
