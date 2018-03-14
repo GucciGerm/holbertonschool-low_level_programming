@@ -44,10 +44,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 
 	fd = write(STDOUT_FILENO, buffer, length);
+	if (fd == -1)
 	{
 		free(buffer);
 		close(fd);
-		return (length);
+		return (-1);
 	}
 
 	free(buffer);
