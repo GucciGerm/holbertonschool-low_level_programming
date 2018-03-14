@@ -19,7 +19,7 @@ int create_file(const char *filename, char *text_content)
 	int fd;
 	int length;
 
-	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC | 0400 | 0200);
+	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0400 | 0200);
 	if (fd == -1) /*you want to do this if to check fd equal to -1*/
 		return (-1);
 	/*O_CREAT - use o-creat to creates files */
