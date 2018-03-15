@@ -71,25 +71,25 @@ int main(int argc, char *argv[])
 		error_98(argv[1]);
 	file02 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (file02 == -1)
-		error_98(argv[2]);
+		error_99(argv[2]);
 	/* to read and write */
-	while (read_file > 0)
+	read_file = read(file01, buffer, 1024);
+	if (read_file == -1)
 	{
-		read_file = read(file01, buffer, 1024);
-		if (read_file == -1)
-		{
-			error_98(argv[1]);
-		}
+		error_98(argv[1]);
+	}
+	while (read_file != 0)
+	{
 		write_file = write(file02, buffer, read_file);
 	/* Use "read_file" within write fun to optimizes code so you dont */
 	/* need to use a new int */
 		if (write_file == -1)
-		{
 			error_99(argv[2]);
-		}
+		read_file = read(file01, buffer, 1024);
+		if (read_file == -1)
+			error_98(argv[1]);
 	}
-	/* to close file */
-	close_file = close(file01);
+	close_file = close(file01); /*to close our files*/
 	if (close_file == -1)
 		error_100(file01);
 	close_file = close(file02);
