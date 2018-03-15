@@ -73,21 +73,16 @@ int main(int argc, char *argv[])
 	if (file02 == -1)
 		error_99(argv[2]);
 	/* to read and write */
-	read_file = read(file01, buffer, 1024);
-	if (read_file == -1)
-	{
-		error_98(argv[1]);
-	}
 	while (read_file != 0)
 	{
-		write_file = write(file02, buffer, read_file);
-	/* Use "read_file" within write fun to optimizes code so you dont */
-	/* need to use a new int */
-		if (write_file == -1)
-			error_99(argv[2]);
 		read_file = read(file01, buffer, 1024);
 		if (read_file == -1)
 			error_98(argv[1]);
+	/* Use "read_file" within write fun to optimizes code so you dont */
+	/* need to use a new int */
+		write_file = write(file02, buffer, read_file);
+		if (write_file == -1)
+			error_99(argv[2]);
 	}
 	close_file = close(file01); /*to close our files*/
 	if (close_file == -1)
