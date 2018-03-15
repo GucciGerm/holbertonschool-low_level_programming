@@ -73,9 +73,8 @@ int main(int argc, char *argv[])
 	if (file02 == -1)
 		error_99(argv[2]);
 	/* to read and write */
-	while (read_file != 0)
+	while ((read_file = read(file01, buffer, 1024)) != 0)
 	{
-		read_file = read(file01, buffer, 1024);
 		if (read_file == -1)
 			error_98(argv[1]);
 	/* Use "read_file" within write fun to optimizes code so you dont */
