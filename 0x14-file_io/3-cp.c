@@ -29,7 +29,7 @@ void error_98(char *fd)
 
 void error_99(char *fd)
 {
-	dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", fd);
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", fd);
 	exit(99);
 }
 
@@ -57,7 +57,7 @@ void error_100(int fd)
 
 int main(int argc, char *argv[])
 {
-	int file01, file02, read_file = 0, write_file, close_file;
+	int file01, file02, read_file, write_file, close_file;
 	char *buffer[1024];
 
 	if (argc != 3) /*3 because we want to exactly 2 inputs*/
