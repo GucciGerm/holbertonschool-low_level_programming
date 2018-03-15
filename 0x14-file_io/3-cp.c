@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3) /*3 because we want to exactly 2 inputs*/
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97); /*edgecase*/
 	}
 	/* to open file */
