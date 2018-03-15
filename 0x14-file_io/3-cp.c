@@ -57,7 +57,7 @@ void error_100(int fd)
 
 int main(int argc, char *argv[])
 {
-	int file01, file02, read_file, write_file, close_file;
+	int file01, file02, read_file = 0, write_file, close_file;
 	char *buffer[1024];
 
 	if (argc != 3) /*3 because we want to exactly 2 inputs*/
@@ -73,21 +73,20 @@ int main(int argc, char *argv[])
 	if (file02 == -1)
 		error_98(argv[2]);
 	/* to read and write */
-	read_file = read(file01, buffer, 1024);
-	if (read_file == -1)
+	while (read_file > 0)
 	{
-		close(file01);
-		close(file02);
-		error_98(argv[1]);
-	}
-	write_file = write(file02, buffer, read_file);
+		read_file = read(file01, buffer, 1024);
+		if (read_file == -1)
+		{
+			error_98(argv[1]);
+		}
+		write_file = write(file02, buffer, read_file);
 	/* Use "read_file" within write fun to optimizes code so you dont */
 	/* need to use a new int */
-	if (write_file == -1)
-	{
-		close(file01);
-		close(file02);
-		error_99(argv[2]);
+		if (write_file == -1)
+		{
+			error_99(argv[2]);
+		}
 	}
 	/* to close file */
 	close_file = close(file01);
