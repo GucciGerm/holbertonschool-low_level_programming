@@ -17,8 +17,7 @@
 
 void error_98(char *fd)
 {
-	dprintf(STDERR_FILENO,
-		 "Error: Can't read from file NAME_OF_THE_FILE%s\n", fd);
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", fd);
 	exit(98);
 }
 
@@ -30,8 +29,7 @@ void error_98(char *fd)
 
 void error_99(char *fd)
 {
-	dprintf(STDERR_FILENO,
-		 "Error: Can't write to NAME_OF_THE_FILE%s\n", fd);
+	dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", fd);
 	exit(99);
 }
 
@@ -43,7 +41,7 @@ void error_99(char *fd)
 
 void error_100(int fd)
 {
-	dprintf(STDERR_FILENO, "Error: Can't close fd FD_VALUE%d\n", fd);
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 	exit(100);
 }
 
