@@ -20,9 +20,9 @@ size_t dlistint_len(const dlistint_t *h)
 
 	while (doublylinklist)
 	{
-		elementcount++;
+		/*setting the dll to the next node */
 		doublylinklist = doublylinklist->next;
-		/* setting the dll to the next node */
+		elementcount++;
 	}
 	return (elementcount);
 }
