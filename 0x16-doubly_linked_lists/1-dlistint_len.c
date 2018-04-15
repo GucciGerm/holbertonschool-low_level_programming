@@ -15,14 +15,19 @@ size_t dlistint_len(const dlistint_t *h)
 	size_t elementcount = 0;
 	dlistint_t *doublylinklist = NULL;
 
+	if (h == NULL)
+		return (0);
+	/* including fail check to see if empty */
+
 	doublylinklist = h->next;
 	elementcount++;
 
 	while (doublylinklist)
 	{
-		/*setting the dll to the next node */
-		doublylinklist = doublylinklist->next;
+
 		elementcount++;
+		doublylinklist = doublylinklist->next;
+		/* setting the dll to the next node */
 	}
 	return (elementcount);
 }
