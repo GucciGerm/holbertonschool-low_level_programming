@@ -1,0 +1,1 @@
+Today at Holberton we are learning about Hash tables
