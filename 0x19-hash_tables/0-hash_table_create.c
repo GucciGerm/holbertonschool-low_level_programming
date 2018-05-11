@@ -20,12 +20,12 @@ hash_table_t *hash_table_create(unsigned long int size)
 	{
 		return (NULL);
 	}
-	hasharray = malloc(size * (sizeof(hash_node_t)));
+	hasharray = malloc(size * (sizeof(hash_node_t*)));
 	if (hasharray == NULL)
 	{
 		return (NULL);
 	}
-	hashtable = malloc(sizeof(*hash_table_t));
+	hashtable = malloc(sizeof(hash_table_t));
 	if (hashtable == NULL)
 	{
 		return (NULL);
@@ -34,7 +34,6 @@ hash_table_t *hash_table_create(unsigned long int size)
 	{
 		hasharray[counter] = NULL;
 	}
-	free(hasharray);
 	hashtable->size = size;
 	hashtable->array = hasharray;
 
