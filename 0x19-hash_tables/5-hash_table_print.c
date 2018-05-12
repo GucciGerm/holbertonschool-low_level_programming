@@ -25,21 +25,17 @@ void hash_table_print(const hash_table_t *ht)
 		hashtable = ht->array[idx];
 		while (hashtable != NULL)
 		{
-			if (numofelements == 0)
-			{
-				printf("'%s': '%s'", hashtable->key,
-				      hashtable->value);
-				/* after you print you have now incremented*/
-				numofelements = 1;
-			}
-			else
-				/* account for what's inside */
+			if (numofelements == 1)
 				printf(",'%s': '%s'", hashtable->key,
 				       hashtable->value);
+			else
+				printf("'%s': '%s'", hashtable->key,
+				       hashtable->value);
+			numofelements = 1;
 			hashtable = hashtable->next;
-
 		}
-		idx++; /* count through the hash table using index*/
+		idx++; /* count through the hash table using index */
 	}
 	printf("}\n");
+
 }
