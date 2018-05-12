@@ -26,16 +26,14 @@ void hash_table_print(const hash_table_t *ht)
 		while (hashtable != NULL)
 		{
 			if (numofelements == 1)
-				printf(",'%s': '%s'", hashtable->key,
-				       hashtable->value);
-			else
-				printf("'%s': '%s'", hashtable->key,
-				       hashtable->value);
+				printf(",");
+
+			printf("'%s': '%s'", hashtable->key,
+			       hashtable->value);
 			numofelements = 1;
 			hashtable = hashtable->next;
 		}
 		idx++; /* count through the hash table using index */
 	}
 	printf("}\n");
-
 }
