@@ -1,0 +1,1 @@
+Today at holberton we are sorting algorithums and learning the concept of big o
