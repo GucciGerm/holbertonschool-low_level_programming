@@ -17,7 +17,7 @@ int binarySearch(int *array, size_t l, size_t r, int value)
 	char delimeter = 0;
 
 
-	if (l <= r)
+	while (l <= r)
 	{
 		midpoint = (l + r) / 2;
 		printf("Searching in array:");
