@@ -1,41 +1,28 @@
 #include "search_algos.h"
 
 /**
- * binarySearch - This script is a tool called binarysearch will search
- * @array: is the pointer to the first element
- * @l: left halve of array
- * @r: right halve of array
- * @value: Value is the the tart value we're looking for
+ * printvalues - This side tool will print the values on the within array
  *
- * Return: This will return a -1 if no val, else return the index
+ * @array: array is a pointer to the first element of array
+ * @l: left side of array
+ * @r: right side of an array
+ *
+ * Return: None, just print
  */
 
-int binarySearch(int *array, size_t l, size_t r, int value)
+void printvalues(int *array, size_t l, size_t r)
 {
-	size_t midpoint;
-	size_t i = l;
-	char delimeter = 0;
+	size_t i;
 
+	i = l;
 
-	while (l <= r)
+	printf("Searching in array: ");
+	while (i < r)
 	{
-		midpoint = (l + r) / 2;
-		printf("Searching in array:");
-		while (i <= r)
-		{
-			printf("%c %d", delimeter, array[i]);
-			delimeter = ',';
-			i++;
-		}
-		printf("\n");
-		if (array[midpoint] == value)
-			return (midpoint);
-		if (array[midpoint] < value)
-			return (binarySearch(array, midpoint + 1, r, value));
-		else
-			return (binarySearch(array, l, midpoint - 1, value));
+		printf("%d, ", array[i]);
+		i++;
 	}
-	return (-1);
+	printf("%d\n", array[i]);
 }
 
 /**
@@ -50,11 +37,24 @@ int binarySearch(int *array, size_t l, size_t r, int value)
 
 int binary_search(int *array, size_t size, int value)
 {
-	int index;
+	size_t l = 0;
+	size_t r = size - 1;
+	size_t midpoint;
 
 	if (array == NULL)
 		return (-1);
 
-	index = binarySearch(array, 0, size - 1, value);
-	return (index);
+	while (l <= r)
+	{
+		midpoint = (l + r) / 2;
+		printvalues(array, l, r);
+
+		if (array[midpoint] < value)
+			l = midpoint + 1;
+		else if (array[midpoint] > value)
+			r = midpoint - 1;
+		else
+			return (midpoint);
+	}
+	return (-1);
 }
