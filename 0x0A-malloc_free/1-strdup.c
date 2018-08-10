@@ -15,8 +15,8 @@ char *_strdup(char *str)
 	int d;
 	char *Germ;
 
-	if (str == 0)
-		return (0);
+	if (str == NULL)
+		return (NULL);
 
 	for (j = 0; str[j] != '\0'; j++)
 		;
